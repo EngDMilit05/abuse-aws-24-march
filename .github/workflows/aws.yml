@@ -9,16 +9,16 @@ permissions:
   contents: read
 jobs:
   aws-deploy:
-  runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v3
 
-- name: Configure AWS Credentials
-  uses: aws-actions/configure-aws-credentials@v4
-  with:
-    role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-    aws-region: us-east-2
+  - name: Configure AWS Credentials
+    uses: aws-actions/configure-aws-credentials@v4
+    with:
+      role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+      aws-region: us-east-2
 
-- name: Test AWS Access
-  run: |
-    aws s3 ls
+  - name: Test AWS Access
+    run: |
+      aws s3 ls
