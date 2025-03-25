@@ -15,8 +15,8 @@ steps:
 - name: Configure AWS Credentials
 uses: aws-actions/configure-aws-credentials@v4
 with:
-role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-aws-region: us-east-1 # Change to your AWS region
+  role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+  aws-region: us-east-1
 - name: Test AWS Access
 run: |
 aws s3 ls
